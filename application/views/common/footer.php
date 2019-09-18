@@ -24,12 +24,14 @@ $basepath = base_url('assets/');
 						<div class="single-widget">
 							<h2>Quock Shop</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Jeans</a></li>
-								<li><a href="#">Shirt</a></li>
+								<?php foreach($category as $row){?>
+									<li><a href="#"><?php echo $row['cat_name'];?></a></li>
+								<?php } ?>
+								<!-- <li><a href="#">Shirt</a></li>
 								<li><a href="#">T-Shirt</a></li>
 								<li><a href="#">Shoes</a></li>
 								<li><a href="#">Watch</a></li>
-								<li><a href="#">Glass</a></li>
+								<li><a href="#">Glass</a></li> -->
 							</ul>
 						</div>
 					</div>

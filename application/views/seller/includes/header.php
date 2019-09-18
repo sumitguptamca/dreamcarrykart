@@ -55,8 +55,7 @@ $fname=explode(' ', $_SESSION['sellername']);
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-plus"></i>Product </a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#">Product List</a></li>
-                             <li><a href="#">Add Product</a></li>
+                            <li><a href="<?php echo base_url(); ?>seller/product">Product List</a></li>
                         </ul>
                     </li>
 

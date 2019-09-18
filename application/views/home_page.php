@@ -6,51 +6,30 @@ $basepath = base_url('assets/');
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
+
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
-							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							 <?php echo $indicators; ?>
+							<!-- <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
-							<li data-target="#slider-carousel" data-slide-to="2"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li> -->
 						</ol>
 						
 						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+							 <?php echo $slides; ?>
+								<!-- <div class="item active">
+									<div class="col-sm-6">
+										<h1><span>E</span>-SHOPPER</h1>
+										<h2>Free E-Commerce Template</h2>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<button type="button" class="btn btn-default get">Get it now</button>
+									</div>
+									<div class="col-sm-6">
+
+											<img src="<?php  echo base_url().'/'.$row['image_path'] ?>" class="girl img-responsive" alt="" />
+									</div>
 								</div>
-								<div class="col-sm-6">
-									<img src="<?=$basepath?>images/home/girl1.jpg" class="girl img-responsive" alt="" />
-									<img src="<?=$basepath?>images/home/pricing.png"  class="pricing" alt="" />
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="<?=$basepath?>images/home/girl2.jpg" class="girl img-responsive" alt="" />
-									<img src="<?=$basepath?>images/home/pricing.png"  class="pricing" alt="" />
-								</div>
-							</div>
-							
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="<?=$basepath?>images/home/girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="<?=$basepath?>images/home/pricing.png" class="pricing" alt="" />
-								</div>
-							</div>
+						   -->
 							
 						</div>
 						
@@ -74,64 +53,13 @@ $basepath = base_url('assets/');
 					<div class="left-sidebar">
 						<h2>Category</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mens
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Fendi</a></li>
-											<li><a href="#">Guess</a></li>
-											<li><a href="#">Valentino</a></li>
-											<li><a href="#">Dior</a></li>
-											<li><a href="#">Versace</a></li>
-											<li><a href="#">Armani</a></li>
-											<li><a href="#">Prada</a></li>
-											<li><a href="#">Dolce and Gabbana</a></li>
-											<li><a href="#">Chanel</a></li>
-											<li><a href="#">Gucci</a></li>
-										</ul>
+							<?php foreach($category as $row){?>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title"><a href="#"><?php echo $row['cat_name'];?></a></h4>
 									</div>
 								</div>
-							</div> -->
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Jeans</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Shirt</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">T-Shirt</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Shoes</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Watch</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Glass</a></h4>
-								</div>
-							</div>
-						
+							<?php } ?>
 						</div><!--/category-products-->
 					
 						<!-- <div class="brands_products">
@@ -156,20 +84,17 @@ $basepath = base_url('assets/');
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
 						</div> -->
-						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="<?=$basepath?>images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="<?=$basepath?>images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
-					
+						<?php foreach($adsbanner as $row){?>
+							<div class="shipping text-center"><!--shipping-->
+								<img src="<?php  echo base_url().'/'.$row['image_path'] ?>" alt="" />
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">All Items</h2>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">

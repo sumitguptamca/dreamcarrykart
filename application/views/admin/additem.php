@@ -1,12 +1,7 @@
  <?php include('includes/header.php')?>
     <?php include('includes/nav.php')?>
- 
-
-
         <div class="content mt-3">
             <div class="animated fadeIn">
-
-
                 <div class="row">
                     
                     <!--/.col-->

@@ -4,7 +4,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
 	public function index()
 	{
-		$this->load->view('home_page');
+		$banner=$this->Users_model->getAllBanner();
+		$count = count($banner);
+	    $indicators = '';
+	    $slides = '';
+	    $counter = 0;
+	    foreach($banner AS $row){
+	    	 $image = base_url($row['image_path']);
+	    	 // echo "<pre>"; print_r($image);
+	          if ($counter == 0) {
+	            $indicators .= '<li data-target="#slider-carousel" data-slide-to="' . $counter . '"
+	            class="active"></li>';
+	            $slides .= '<div class="item active">
+	            <div class="col-sm-6">
+						<h1><span>E</span>-SHOPPER</h1>
+						<h2>Free E-Commerce Template</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<button type="button" class="btn btn-default get">Get it now</button>
+				</div>
+	            <div class="col-sm-6">
+	         	 	<img src="'. $image.'" class="girl img-responsive" alt="" />
+	         	</div>
+
+	            </div>';
+	          } else {
+	            $indicators .= '<li data-target="#slider-carousel"
+	            data-slide-to="' . $counter . '"></li>';
+	            $slides .= '<div class="item">
+	            <div class="col-sm-6">
+						<h1><span>E</span>-SHOPPER</h1>
+						<h2>Free E-Commerce Template</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<button type="button" class="btn btn-default get">Get it now</button>
+				</div>
+	            <div class="col-sm-6">
+	         	 	<img src="'. $image.'" class="girl img-responsive" alt="" />
+	         	</div>
+	            </div>';
+	          }
+          $counter=$counter+1;
+	    }
+	     $data['indicators'] = $indicators;
+     	 $data['slides'] = $slides;
+     	 $data['adsbanner']=$this->Users_model->getAllAdsBanner();
+     	 $data['category']=$this->Users_model->getAllCategory();
+     	// echo "<pre>"; print_r($data);exit;
+		$this->load->view('home_page',$data);
 	}
 	public function login(){
 		$this->form_validation->set_rules('uemail','Email','required');
@@ -102,4 +147,5 @@ class Home extends CI_Controller {
 			redirect('home');
 			exit;
 	}
+
 }
