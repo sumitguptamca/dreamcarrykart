@@ -71,12 +71,15 @@ $route['admin/category/updatecategory'] = 'admins/category/updatecategory';
 $route['admin/category/additem'] = 'admins/category/additem';
 $route['admin/category/showitem'] = 'admins/category/showitem';
 $route['admin/category/saveitem'] = 'admins/category/saveitem';
+$route['admin/category/edititem'] = 'admins/category/edit_item';
+$route['admin/category/deleteitem'] = 'admins/category/delete_item';
 $route['admin/order'] = 'admins/order/index';
 $route['admin/order/c_order'] = 'admins/order/c_order';
 $route['admin/order/p_order'] = 'admins/order/p_order';
 $route['admin/order/cancel_order'] = 'admins/order/cancel_order';
 $route['admin/user'] = 'admins/user/index';
 $route['admin/seller'] = 'admins/seller/index';
+
 //////// Seller //////
 $route['seller'] = 'sellers/seller_login';
 $route['seller/signup'] = 'sellers/seller_login/signup';

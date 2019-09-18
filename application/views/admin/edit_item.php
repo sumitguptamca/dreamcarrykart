@@ -13,7 +13,7 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <strong>Add  Product Item</strong>
+            <strong>Edit  Product Item</strong>
         </div>
         <div class="card-body card-block">
             <form action="<?php echo base_url(); ?>admins/category/updateitem" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -21,7 +21,8 @@
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name</label></div>
                     <div class="col-12 col-md-6"><input type="text" id="p_name" name="p_name" placeholder="Product Name" class="form-control" value="<?= $item['p_name'] ?>" >
-                        <input type="hidden" name="cat_id" value="<?php echo $_GET['id']; ?>">
+                        <input type="hidden" name="cat_id" value="<?php echo $_GET['cid']; ?>">
+                         <input type="hidden" name="item_id" value="<?php echo $_GET['itemid']; ?>">
                         <input type="hidden" name="p_id" value="<?php echo $item['p_id']; ?>">
                          <input type="hidden" name="seller_id" value="<?php echo $item['seller_id']; ?>">
                         <small class="form-text text-muted"></small></div>
@@ -53,19 +54,38 @@
                  <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Size </label></div>
                     <div class="col-12 col-md-6">
-
-                            <select name="p_size[]" id="p_size" data-placeholder="Choose Size.." multiple class="standardSelect form-control">
-                                  <?php $value = json_decode($item['p_size']); ?>
-                                <option value=""></option>
-                               <option value="XS" <?php if($value[0] == "XL"){echo "selected";} ?>>XS</option>
-                                <option value="S"<?php if($value[1] == "S"){echo "selected";} ?>>S</option>
-                                 <option value="M"<?php if($value[2] == "M"){echo "selected";} ?>>M</option>
-                                <option value="L"<?php if($value[3] == "L"){echo "selected";} ?>>L</option>
-                                 <option value="XL"<?php if($value[4] == "XL"){echo "selected";} ?>>XL</option>
-                                <option value="XXL"<?php if($value[5] == "XXL"){echo "selected";} ?>>XXL</option>
-
-                            </select>
-
+                      <div class="form-check">
+                      <div class="checkbox">
+                          <label for="checkbox1" class="form-check-label ">
+                              <input type="checkbox" id="checkbox1" name="p_xs" value="XS" <?php if($item['p_xs'] == 'XS'){echo "checked";} ?> class="form-check-input">XS
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox2" class="form-check-label ">
+                              <input type="checkbox" id="checkbox2" name="p_s" value="S" <?php if($item['p_s'] == 'S'){echo "checked";} ?> class="form-check-input">S
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox3" class="form-check-label ">
+                              <input type="checkbox" id="checkbox3" name="p_m" <?php if($item['p_m'] == 'M'){echo "checked";} ?> value="M" class="form-check-input">M
+                          </label>
+                      </div>
+                       <div class="checkbox">
+                          <label for="checkbox1" class="form-check-label ">
+                              <input type="checkbox" id="checkbox1" name="p_l" <?php if($item['p_l'] == 'L'){echo "checked";} ?> value="L" class="form-check-input">L
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox2" class="form-check-label ">
+                              <input type="checkbox" id="checkbox2" name="p_xl" <?php if($item['p_xl'] == 'XL'){echo "checked";} ?> value="XL" class="form-check-input">XL
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox3" class="form-check-label ">
+                              <input type="checkbox" id="checkbox3" name="p_xxl" <?php if($item['p_xxl'] == 'XXL'){echo "checked";} ?> value="XXL" class="form-check-input">XXL
+                          </label>
+                      </div>
+                  </div>
                     </div>
                 </div>
                  <div class="row form-group">
@@ -98,7 +118,7 @@
                     <div class="col-12 col-md-6">
                         <?php  //echo "<pre>"; print_r($tt);?>
                         <?php foreach ($tt as $row) { ?>
-                          <img src="<?php  echo base_url().'/'.$row['image_path'] ?>" height=75 width=100> <a href="<?php echo base_url() ?>admins/category/deleteitemimage?itemid=<?=$row['id'] ?>&id=<?=$_GET['id'] ?>" alt="delete image"><i class="fa fa-arrows-alt"></i></a>
+                          <img src="<?php  echo base_url().'/'.$row['image_path'] ?>" height=75 width=100> <a href="<?php echo base_url() ?>admins/category/deleteitemimage?image_id=<?=$row['id'] ?>&itemid=<?=$_GET['itemid'] ?>&cid=<?=$_GET['cid'] ?>" alt="delete image"><i class="fa fa-arrows-alt"></i></a>
 
                        <?php } ?>
 

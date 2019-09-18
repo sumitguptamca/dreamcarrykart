@@ -39,7 +39,7 @@
                                             <td>
                                                  <a href="<?php echo base_url(); ?>admin/category/editcategory?id=<?php echo $cat['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a> &nbsp;
                                                  <a href="<?php echo base_url(); ?>admins/category/additem?id=<?php echo $cat['id'] ?>"><button type="button" class="btn btn-primary">Add Item</button></a>
-                                                <a href="<?php echo base_url(); ?>admin/category/showitem?id=<?php echo $cat['id'] ?>"><button type="button" class="btn btn-primary">Show Item</button></a>
+                                                <a href="<?php echo base_url(); ?>admin/category/showitem?cid=<?php echo $cat['id'] ?>"><button type="button" class="btn btn-primary">Show Item</button></a>
                                             </td>
                                         </tr>
 

@@ -61,7 +61,12 @@ class Category extends CI_Controller {
 			 	'p_condition' => $this->input->post('p_condition'),
 			 	'p_brand' => $this->input->post('p_brand'),
 			 	'p_material' => $this->input->post('p_material'),
-			 	'p_size' => json_encode($this->input->post('p_size')),
+			 	'p_xs' => $this->input->post('p_xs'),
+			 	'p_s' => $this->input->post('p_s'),
+			 	'p_m' => $this->input->post('p_m'),
+			 	'p_l' => $this->input->post('p_l'),
+			 	'p_xl' => $this->input->post('p_xl'),
+			 	'p_xxl' => $this->input->post('p_xxl'),
 			 	'p_price' => $this->input->post('p_price'),
 			 	'p_offerprice' => $this->input->post('p_offerprice'),
 			 	'p_brand' => $this->input->post('p_brand'),
@@ -117,31 +122,33 @@ class Category extends CI_Controller {
 	}
 
 	public function showitem(){
-		$data['product']=$this->Category_model->getAllItemByCategory($_GET['id']);
+		$data['product']=$this->Category_model->getAllItemByCategory($_GET['cid']);
 		$this->load->view('admin/show_item',$data);
 	}
 	public function changeitemstatus(){
-		
+		//echo "<pre>";print_r($_GET);die;
 		$id =  $this->input->get('id');
 		 $status = $this->input->get('status');
 		$reg=$this->Category_model->changeitemstatus($id,$status);
-		redirect('admin/category/showitem?id='.$_GET['cat_id'].'','refresh');
+		redirect('admin/category/showitem?cid='.$_GET['cat_id'].'','refresh');
 				 exit();
 
 	}
 	public function edit_item(){
 
-			$data['item']=$this->Category_model->editItem($_GET['id']);
+			$data['item']=$this->Category_model->editItem($_GET['itemid'],$_GET['cid']);
 
 		//echo "<pre>";print_r($data['item']);die;
 		$this->load->view('admin/edit_item',$data);
 
 	}
 	public function updateitem(){
-		//echo "<pre>"; print_r($_POST);print_r($_FILES);exit();
+		//echo "<pre>"; print_r($_POST); exit();
+
 		if(isset($_POST['submit'])){
 
 			 $data=array(
+			 	'id'=>$this->input->post('item_id'),
 			 	'p_id' =>$this->input->post('p_id'),
 			 	'seller_id' =>$this->input->post('seller_id'),
 			 	'cat_id' =>$this->input->post('cat_id'),
@@ -151,7 +158,12 @@ class Category extends CI_Controller {
 			 	'p_condition' => $this->input->post('p_condition'),
 			 	'p_brand' => $this->input->post('p_brand'),
 			 	'p_material' => $this->input->post('p_material'),
-			 	'p_size' => json_encode($this->input->post('p_size')),
+			 	'p_xs' => $this->input->post('p_xs'),
+			 	'p_s' => $this->input->post('p_s'),
+			 	'p_m' => $this->input->post('p_m'),
+			 	'p_l' => $this->input->post('p_l'),
+			 	'p_xl' => $this->input->post('p_xl'),
+			 	'p_xxl' => $this->input->post('p_xxl'),
 			 	'p_price' => $this->input->post('p_price'),
 			 	'p_offerprice' => $this->input->post('p_offerprice'),
 			 	'p_brand' => $this->input->post('p_brand'),
@@ -201,7 +213,7 @@ class Category extends CI_Controller {
 			       }
 
 
-			 redirect('admin/category/showitem?id='.$_POST['cat_id'].'','refresh');
+			 redirect('admin/category/showitem?cid='.$_POST['cat_id'].'','refresh');
 				 exit();
 				}
 
@@ -212,8 +224,8 @@ class Category extends CI_Controller {
 	}
 	public function deleteitemimage(){
 		//echo "<pre>"; print_r($_GET);exit();
-		$data['item']=$this->Category_model->itemimagedelte($_GET['itemid']);
-		redirect('admin/category/edititem?id='.$_GET['id'].'','refresh');
+		$data['item']=$this->Category_model->itemimagedelte($_GET['image_id']);
+		redirect('admin/category/edititem?itemid='.$_GET['itemid'].'&cid='.$_GET['cid'].'','refresh');
 				 exit();
 
 	}

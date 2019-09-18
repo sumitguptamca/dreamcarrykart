@@ -28,8 +28,8 @@
                     <div class="col-12 col-md-6"><input type="text" id="p_price" name="p_price" placeholder="Product Price" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Offer Price <i class="fa fa-inr"></label></div>
-                    <div class="col-12 col-md-6"></i><input type="text" id="p_offerprice" name="p_offerprice" placeholder="Offer Price" class="form-control"><small class="form-text text-muted"></small></div>
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Offer Price <i class="fa fa-inr"></i></label></div>
+                    <div class="col-12 col-md-6"><input type="text" id="p_offerprice" name="p_offerprice" placeholder="Offer Price" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Brand</label></div>
@@ -40,21 +40,40 @@
                     <div class="col-12 col-md-6"><input type="text" id="p_material" name="p_material" placeholder="Material/Fabricand" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Size</label></div>
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Size </label></div>
                     <div class="col-12 col-md-6">
-
-                            <select name="p_size[]" id="p_size" data-placeholder="Choose Size.." multiple class="standardSelect form-control">
-
-                                <option value=""></option>
-                               <option value="XS">XS</option>
-                                <option value="S">S</option>
-                                 <option value="M">M</option>
-                                <option value="L">L</option>
-                                 <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
-
-                            </select>
-
+                      <div class="form-check">
+                      <div class="checkbox">
+                          <label for="checkbox1" class="form-check-label ">
+                              <input type="checkbox" id="checkbox1" name="p_xs" value="XS" class="form-check-input">XS
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox2" class="form-check-label ">
+                              <input type="checkbox" id="checkbox2" name="p_s" value="S" class="form-check-input">S
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox3" class="form-check-label ">
+                              <input type="checkbox" id="checkbox3" name="p_m"  value="M" class="form-check-input">M
+                          </label>
+                      </div>
+                       <div class="checkbox">
+                          <label for="checkbox1" class="form-check-label ">
+                              <input type="checkbox" id="checkbox1" name="p_l"  value="L" class="form-check-input">L
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox2" class="form-check-label ">
+                              <input type="checkbox" id="checkbox2" name="p_xl"  value="XL" class="form-check-input">XL
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="checkbox3" class="form-check-label ">
+                              <input type="checkbox" id="checkbox3" name="p_xxl"  value="XXL" class="form-check-input">XXL
+                          </label>
+                      </div>
+                  </div>
                     </div>
                 </div>
                  <div class="row form-group">
