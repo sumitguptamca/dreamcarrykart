@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Product List &nbsp; <a href="<?php echo base_url(); ?>admin/category">Back to Category</a></strong>
+                                <strong class="card-title">Product List > <a href="<?php echo base_url(); ?>seller/product">Back to Product Category</a></strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -34,26 +34,22 @@
                                             <br> <?php echo $row['p_condition']; ?><br>
                                             <?=  $row['p_brand']; ?>
                                              </td>
-                                             <td><?= $row['p_price'] ?>
-                                                <?php ?>
-                                             </td>
-                                                <td><?= $row['p_offerprice'] ?> </td>
+                                            <td><?= $row['p_price'] ?> </td>
+                                            <td><?= $row['p_offerprice'] ?> </td>
                                             <td>
-
                                                 <label class="switch switch-3d switch-primary mr-3">
-                                        <input type="checkbox" class="switch-input" onchange="window.location = '<?php echo base_url() ?>admins/category/changeitemstatus?id=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['id']; ?>&status=<?php echo $row['status'] == 1 ? '0' : '1'?>'" <?php if($row['status'] != 0){echo'checked="true"';} ?>> 
-                                                    <span class="switch-label"></span> 
+                                       			<input type="checkbox" class="switch-input" onchange="window.location = '<?php echo base_url() ?>admins/category/changeitemstatus?id=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['id']; ?>&status=<?php echo $row['status'] == 1 ? '0' : '1'?>'" <?php if($row['status'] != 0){echo'checked="true"';} ?>>
+                                                    <span class="switch-label"></span>
                                                     <span class="switch-handle"></span>
                                                 </label>
                                              </td>
                                             <td>
-                                                 <a href="<?php echo base_url(); ?>admin/banner/editbanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a> &nbsp;
-                                                 <!-- <a href="#"><button type="button" class="btn btn-danger">Delete</button></a> &nbsp; -->
+                                                 <a href="<?php echo base_url(); ?>admin/banner/editbanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a>
                                                  <a href="<?php echo base_url(); ?>admins/banner/deletebanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
                                             </td>
                                         </tr>
                                     <?php $i++; } ?>
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -64,14 +60,5 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-
-
-
-
-
-
-
-
-
 
        <?php include('includes/footer.php')?>

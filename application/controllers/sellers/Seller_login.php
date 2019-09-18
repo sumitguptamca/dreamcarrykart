@@ -94,6 +94,8 @@ class Seller_login extends CI_Controller {
 
 		}
 		else{
+			$_SESSION['TYPE'] = 'error';
+            $_SESSION['MESSAGE'] = 'Invalid credential.';
 			$this->load->view('seller/seller_login');
 		}
 	}

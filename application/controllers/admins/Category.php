@@ -115,10 +115,7 @@ class Category extends CI_Controller {
 	}
 
 	public function showitem(){
-
 		$data['product']=$this->Category_model->getAllItemByCategory($_GET['id']);
-		
-		//echo "<pre>";print_r($data['product']);die;
 		$this->load->view('admin/show_item',$data);
 	}
 	public function changeitemstatus(){

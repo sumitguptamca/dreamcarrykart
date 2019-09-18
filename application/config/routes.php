@@ -81,6 +81,9 @@ $route['admin/seller'] = 'admins/seller/index';
 $route['seller'] = 'sellers/seller_login';
 $route['seller/signup'] = 'sellers/seller_login/signup';
 $route['seller/dashboard'] = 'sellers/seller_dashboard';
+$route['seller/product'] = 'sellers/seller_dashboard/showProductCategory';
+$route['seller/addproduct'] = 'sellers/seller_dashboard/addProductItem';
+$route['seller/showproduct'] = 'sellers/seller_dashboard/showProductItem';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

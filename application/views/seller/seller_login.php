@@ -1,8 +1,8 @@
 <?php
-// if (isset($_SESSION['admin_email'])) {
-//     redirect('admin/dashboard');
-//     exit;
-// }
+if (isset($_SESSION['selleremail'])) {
+    redirect('seller/dashboard');
+    exit;
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -43,11 +43,14 @@
                     <a href="<?php echo base_url();?>seller">
                         <!-- <img class="align-content" src="images/logo.png" alt=""> -->
                         <strong class="align-content"><h2>SELLER LOGIN</h2></strong>
+                        <?php if($_SESSION['TYPE']=='error') {?>
+                            <h6><?php echo $_SESSION['MESSAGE'];?></h6>
+                        <?php } ?>
                     </a>
                 </div>
                 <div class="login-form">
               
-                 <form action="<?php  echo base_url(); ?>sellers/Seller_login/login" method="post">
+                 <form action="<?php  echo base_url(); ?>sellers/seller_login/login" method="post">
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" required placeholder="Please Enter Email" name="email">
