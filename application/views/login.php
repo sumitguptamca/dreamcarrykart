@@ -37,6 +37,8 @@ $basepath = base_url('assets/');
 							<?php echo form_error('email');?>
 							<input type="password" placeholder="Password" name="password"/>
 							<?php echo form_error('password');?>
+							<input type="text" placeholder="Mobile" name="mobile"/>
+							<?php echo form_error('mobile');?>
 							 <input type="submit" name="submit" class="btn btn-md btn-primary full-width" value="Sign Up!">
 							<!-- <button type="submit" class="btn btn-default">Signup</button> -->
 					  </form>
@@ -50,4 +52,3 @@ $basepath = base_url('assets/');
 include('common/footer.php');
 ?>
 
-	

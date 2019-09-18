@@ -27,7 +27,7 @@ class Seller_login extends CI_Controller {
 					'seller_mob'=>$this->input->post('smob'),
 					'gst_no'=>$this->input->post('gst'),
 					'company_name'=>$this->input->post('cname'),
-					'status'=>1,
+					'status'=>0,
 					'is_active'=>1,
 					'is_deleted'=>0,
 					'created_date'=>date('Y-m-d h:i:s')
@@ -55,6 +55,7 @@ class Seller_login extends CI_Controller {
 		
 	}
 	public function login(){
+		//echo "<pre>"; print_r($_POST);exit();
 		$this->form_validation->set_rules('email','Email','required');
 		$this->form_validation->set_rules('password','Password','required');
 		$this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
@@ -68,7 +69,7 @@ class Seller_login extends CI_Controller {
 				$result=$this->Seller_model->sellerLogin($data);
 				//echo "<pre>"; print_r($result);exit();
 				if($result){
-					
+					if($result['status'] != 0){
 		            $_SESSION['sellerid']=$result['seller_id'];
 		            $_SESSION['sellername']=$result['seller_name'];
 		            $_SESSION['selleremail']=$result['seller_email'];
@@ -78,6 +79,11 @@ class Seller_login extends CI_Controller {
 					$_SESSION['TYPE'] = 'success';
            		    $_SESSION['MESSAGE'] = 'Welcome ' . $_SESSION['sellername'];
            		    redirect('seller/dashboard');
+	           		}else{
+	           			$_SESSION['TYPE'] = 'error';
+            		$_SESSION['MESSAGE'] = 'Admin Has Been Dissbale Seller Please Contact Admin.';
+					$this->load->view('seller/seller_login');
+	           		}
 				}
 				else{
 					$_SESSION['TYPE'] = 'error';

@@ -46,8 +46,8 @@
                     </a>
                 </div>
                 <div class="login-form">
-              
-                 <form action="<?php  echo base_url(); ?>sellers/Seller_login/login" method="post">
+                    <h5 style="color: green"><?php echo  $_SESSION['MESSAGE'];?></h5>
+                 <form action="<?php  echo base_url(); ?>sellers/seller_login/login" method="post">
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" required placeholder="Please Enter Email" name="email">

@@ -26,7 +26,7 @@ $basepath = base_url('assets_admin/');
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.css">
-    
+    <link rel="stylesheet" href="<?php echo base_url();?>vendors/chosen/chosen.min.css">
     <!-- <link rel="stylesheet" href="<?php echo base_url();?>vendors/jqvmap/dist/jqvmap.min.css"> -->
     <link rel="stylesheet" href="<?=$basepath?>css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -50,7 +50,7 @@ $basepath = base_url('assets_admin/');
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="<?php echo base_url(); ?>admin/dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <!-- <h3 class="menu-title">UI elements</h3>-->
                     <li class="menu-item-has-children dropdown">
@@ -90,14 +90,14 @@ $basepath = base_url('assets_admin/');
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle"></i>Users</a>
                          <ul class="sub-menu children dropdown-menu">
-                            <li><a href="<?php echo base_url();?>admin/user">User List</a></li>
+                            <li><a href="<?php echo base_url();?>admin/adminuser">User List</a></li>
 
                         </ul>
                     </li>
                       <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle"></i>Seller</a>
                          <ul class="sub-menu children dropdown-menu">
-                            <li><a href="<?php echo base_url();?>admin/seller">Seller List</a></li>
+                            <li><a href="<?php echo base_url();?>admin/adminseller">Seller List</a></li>
 
                         </ul>
                     </li>

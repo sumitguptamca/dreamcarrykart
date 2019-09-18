@@ -49,9 +49,9 @@
                                                 </label>
                                              </td>
                                             <td>
-                                                 <a href="<?php echo base_url(); ?>admin/banner/editbanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a> &nbsp;
+                                                 <a href="<?php echo base_url(); ?>admin/category/edititem?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a> &nbsp;
                                                  <!-- <a href="#"><button type="button" class="btn btn-danger">Delete</button></a> &nbsp; -->
-                                                 <a href="<?php echo base_url(); ?>admins/banner/deletebanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                                                 <a href="<?php echo base_url(); ?>admins/banner/deleteitem?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
                                             </td>
                                         </tr>
                                     <?php $i++; } ?>

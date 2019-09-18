@@ -29,16 +29,38 @@
                     <div class="col-12 col-md-6"><input type="text" id="p_description" name="p_description" placeholder="Product Description" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Price</label></div>
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Price <i class="fa fa-inr"></i></label></div>
                     <div class="col-12 col-md-6"><input type="text" id="p_price" name="p_price" placeholder="Product Price" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Offer Price</label></div>
-                    <div class="col-12 col-md-6"><input type="text" id="p_offerprice" name="p_offerprice" placeholder="Offer Price" class="form-control"><small class="form-text text-muted"></small></div>
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Offer Price <i class="fa fa-inr"></label></div>
+                    <div class="col-12 col-md-6"></i><input type="text" id="p_offerprice" name="p_offerprice" placeholder="Offer Price" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Brand</label></div>
                     <div class="col-12 col-md-6"><input type="text" id="p_brand" name="p_brand" placeholder="Brand" class="form-control"><small class="form-text text-muted"></small></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Material/Fabricand</label></div>
+                    <div class="col-12 col-md-6"><input type="text" id="p_material" name="p_material" placeholder="Material/Fabricand" class="form-control"><small class="form-text text-muted"></small></div>
+                </div>
+                 <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Size</label></div>
+                    <div class="col-12 col-md-6">
+
+                            <select name="p_size[]" id="p_size" data-placeholder="Choose Size.." multiple class="standardSelect form-control">
+
+                                <option value=""></option>
+                               <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                 <option value="M">M</option>
+                                <option value="L">L</option>
+                                 <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+
+                            </select>
+
+                    </div>
                 </div>
                  <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Availability</label></div>

@@ -19,13 +19,21 @@ class Home extends CI_Controller {
 				$result=$this->Users_model->userlogin($data);
 				//echo "<pre>"; print_r($result);exit();
 				if($result){
+					if($result['status'] != 0){
+						 	$_SESSION['userid']=$result['user_id'];
+				            $_SESSION['user_name']=$result['name'];
+				            $_SESSION['user_email']=$result['email'];
+							$_SESSION['TYPE'] = 'success';
+		           		    $_SESSION['MESSAGE'] = 'Welcome ' . $_SESSION['user_name'];
+		           		    redirect('home');
+					}else{
+						$_SESSION['TYPE'] = 'error';
+	            		$_SESSION['MESSAGE'] = 'Admin Has Been Dissbale User Please Contact Admin.';
+						$this->load->view('login');
+
+					}
 					
-		            $_SESSION['userid']=$result['user_id'];
-		            $_SESSION['user_name']=$result['name'];
-		            $_SESSION['user_email']=$result['email'];
-					$_SESSION['TYPE'] = 'success';
-           		    $_SESSION['MESSAGE'] = 'Welcome ' . $_SESSION['user_name'];
-           		    redirect('home');
+
 				}
 				else{
 					$_SESSION['TYPE'] = 'error';
@@ -49,6 +57,7 @@ class Home extends CI_Controller {
 		$this->form_validation->set_rules('name','Name','required');
 		$this->form_validation->set_rules('email','Email Id','required|is_unique[users.email]');
 		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('mobile','Mobile','required');
 		$this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 		if($this->form_validation->run()){
 			if (isset($_POST['submit'])) {
@@ -59,6 +68,7 @@ class Home extends CI_Controller {
 					'name'=>$this->input->post('name'),
 					'email'=>$this->input->post('email'),
 					'password'=>md5($this->input->post('password')),
+					'mobile'=>$this->input->post('mobile'),
 					'status'=>1,
 					'is_active'=>1,
 					'created_date'=>date('Y-m-d h:i:s')

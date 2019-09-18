@@ -55,6 +55,27 @@ class Category_model extends CI_Model{
            return $this->db->update('product');
 
     }
+    public function editItem($id){
+
+       $query = $this->db->query("SELECT * FROM `product` WHERE `id`='" . $id . "'");
+      $count=$query->num_rows();
+      //echo "<pre>"; print_r($query->result());exit;
+      if($count>0){
+        return $query->row_array();
+      }
+
+
+    }
+    public function update_product_item($data){
+       $this->db->where('p_id', $data['p_id']);
+             $this->db->set($data);
+           return $this->db->update('product');
+
+    }
+    public function itemimagedelte($id){
+      $this -> db -> where('id', $id);
+       $this -> db -> delete('product_image');
+    }
 }
 
 ?>
