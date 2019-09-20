@@ -54,38 +54,22 @@
                  <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Size </label></div>
                     <div class="col-12 col-md-6">
-                      <div class="form-check">
-                      <div class="checkbox">
-                          <label for="checkbox1" class="form-check-label ">
-                              <input type="checkbox" id="checkbox1" name="p_xs" value="XS" <?php if($item['p_xs'] == 'XS'){echo "checked";} ?> class="form-check-input">XS
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox2" class="form-check-label ">
-                              <input type="checkbox" id="checkbox2" name="p_s" value="S" <?php if($item['p_s'] == 'S'){echo "checked";} ?> class="form-check-input">S
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox3" class="form-check-label ">
-                              <input type="checkbox" id="checkbox3" name="p_m" <?php if($item['p_m'] == 'M'){echo "checked";} ?> value="M" class="form-check-input">M
-                          </label>
-                      </div>
-                       <div class="checkbox">
-                          <label for="checkbox1" class="form-check-label ">
-                              <input type="checkbox" id="checkbox1" name="p_l" <?php if($item['p_l'] == 'L'){echo "checked";} ?> value="L" class="form-check-input">L
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox2" class="form-check-label ">
-                              <input type="checkbox" id="checkbox2" name="p_xl" <?php if($item['p_xl'] == 'XL'){echo "checked";} ?> value="XL" class="form-check-input">XL
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox3" class="form-check-label ">
-                              <input type="checkbox" id="checkbox3" name="p_xxl" <?php if($item['p_xxl'] == 'XXL'){echo "checked";} ?> value="XXL" class="form-check-input">XXL
-                          </label>
-                      </div>
-                  </div>
+
+                       <select data-placeholder="Choose a Szie.."  name="p_size[]" multiple class="standardSelect form-control">
+                                    <?php foreach ($size as $value) {?>
+                                      <?php
+
+                                       $query = $this->db->query("SELECT * FROM `product_size` WHERE `p_id`='" . $item['p_id'] . "' AND `size_id`='" . $value['id'] . "'");
+                                     //  echo $this->db->last_query();//die;
+                                       $checksize = $query->row_array();
+                                       //print_r($checksize);
+                                       ?>
+
+                                     <option value="<?php echo $value['id']; ?>"<?php if($checksize['size_id'] == $value['id']){echo "selected";} ?>><?php echo $value['name']; ?></option>
+                                  <?php } ?>
+
+                                </select>
+
                     </div>
                 </div>
                  <div class="row form-group">

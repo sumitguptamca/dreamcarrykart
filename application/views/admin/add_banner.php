@@ -36,7 +36,7 @@
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Banner Image</label></div>
                     <div class="col-12 col-md-6"><input type="file" id="file" name="file" class="form-control-file"><small class="form-text text-muted"></small></div>
                 </div>
-               
+
                      <div class="card-footer">
                                                         <input  type="submit" name="submit" class="btn btn-primary btn-sm" value="Submit">
                                                         <button type="reset" class="btn btn-danger btn-sm">
