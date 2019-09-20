@@ -41,40 +41,18 @@
                 </div>
                  <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Size </label></div>
-                    <div class="col-12 col-md-6">
-                      <div class="form-check">
-                      <div class="checkbox">
-                          <label for="checkbox1" class="form-check-label ">
-                              <input type="checkbox" id="checkbox1" name="p_xs" value="XS" class="form-check-input">XS
-                          </label>
+                     <div class="col-12 col-md-6">
+
+              <select data-placeholder="Choose a Szie.."  name="p_size[]" multiple class="standardSelect form-control">
+                                    <?php foreach ($size as $value) {?>
+                                   <option value=""></option>
+                                     <option value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
+                                  <?php } ?>
+
+                                </select>
                       </div>
-                      <div class="checkbox">
-                          <label for="checkbox2" class="form-check-label ">
-                              <input type="checkbox" id="checkbox2" name="p_s" value="S" class="form-check-input">S
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox3" class="form-check-label ">
-                              <input type="checkbox" id="checkbox3" name="p_m"  value="M" class="form-check-input">M
-                          </label>
-                      </div>
-                       <div class="checkbox">
-                          <label for="checkbox1" class="form-check-label ">
-                              <input type="checkbox" id="checkbox1" name="p_l"  value="L" class="form-check-input">L
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox2" class="form-check-label ">
-                              <input type="checkbox" id="checkbox2" name="p_xl"  value="XL" class="form-check-input">XL
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="checkbox3" class="form-check-label ">
-                              <input type="checkbox" id="checkbox3" name="p_xxl"  value="XXL" class="form-check-input">XXL
-                          </label>
-                      </div>
-                  </div>
-                    </div>
+
+
                 </div>
                  <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Availability</label></div>

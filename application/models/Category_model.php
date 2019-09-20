@@ -8,6 +8,11 @@ class Category_model extends CI_Model{
          // echo $this->db->last_query();die;
         
 	}
+  public function getAllSzie(){
+    $query = $this->db->query("SELECT * FROM `size`");
+       return $query->result_array();
+
+  }
     public function changestatus($id,$status){
           $this->db->where('id', $id);
             $this->db->set('status',$status);
@@ -43,6 +48,11 @@ class Category_model extends CI_Model{
       $this->db->insert('product',$data);
             return true;
     }
+    public function save_size($data2){
+       $this->db->insert('product_size',$data2);
+            return true;
+    }
+
     public function uploadImage($data){
      // echo "<pre>"; print_r($data);//exit();
       $this->db->insert('product_image',$data);
@@ -75,6 +85,10 @@ class Category_model extends CI_Model{
     public function itemimagedelte($id){
       $this -> db -> where('id', $id);
        $this -> db -> delete('product_image');
+    }
+    public function deletesize($id){
+      $this -> db -> where('p_id', $id);
+       $this -> db -> delete('product_size');
     }
 }
 

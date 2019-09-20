@@ -44,7 +44,10 @@ class Category extends CI_Controller {
 
 	}
 	public function additem(){
-			$this->load->view('admin/additem');
+		$data['size']=$this->Category_model->getAllSzie();
+
+		//echo "<pre>";print_r($data['size']);die;
+			$this->load->view('admin/additem',$data);
 
 	}
 	public function saveitem(){
@@ -61,12 +64,7 @@ class Category extends CI_Controller {
 			 	'p_condition' => $this->input->post('p_condition'),
 			 	'p_brand' => $this->input->post('p_brand'),
 			 	'p_material' => $this->input->post('p_material'),
-			 	'p_xs' => $this->input->post('p_xs'),
-			 	'p_s' => $this->input->post('p_s'),
-			 	'p_m' => $this->input->post('p_m'),
-			 	'p_l' => $this->input->post('p_l'),
-			 	'p_xl' => $this->input->post('p_xl'),
-			 	'p_xxl' => $this->input->post('p_xxl'),
+			 	'p_size' => json_encode($this->input->post('p_size')),
 			 	'p_price' => $this->input->post('p_price'),
 			 	'p_offerprice' => $this->input->post('p_offerprice'),
 			 	'p_brand' => $this->input->post('p_brand'),
@@ -76,8 +74,21 @@ class Category extends CI_Controller {
 			 	'create_date' => date('Y-m-d'),
 
 			 );
-			 //echo "<pre>"; print_r($data);exit;
+			// echo "<pre>"; print_r($data);exit;
 			$this->Category_model->save_item($data);
+			$psize = $_POST['p_size'];
+			if($psize){
+				foreach ($psize as $ps) {
+					$data2 = array(
+						'p_id' =>$p_id,
+					 	'size_id' => $ps,
+					);
+					//echo "<pre>"; print_r($data2);
+					$this->Category_model->save_size($data2);
+				}
+
+			}
+			//exit;
 
 		if (isset($_FILES['file']['name'])){
 			$total = count($_FILES['file']['name']);
@@ -137,6 +148,7 @@ class Category extends CI_Controller {
 	public function edit_item(){
 
 			$data['item']=$this->Category_model->editItem($_GET['itemid'],$_GET['cid']);
+			$data['size']=$this->Category_model->getAllSzie();
 
 		//echo "<pre>";print_r($data['item']);die;
 		$this->load->view('admin/edit_item',$data);
@@ -158,12 +170,7 @@ class Category extends CI_Controller {
 			 	'p_condition' => $this->input->post('p_condition'),
 			 	'p_brand' => $this->input->post('p_brand'),
 			 	'p_material' => $this->input->post('p_material'),
-			 	'p_xs' => $this->input->post('p_xs'),
-			 	'p_s' => $this->input->post('p_s'),
-			 	'p_m' => $this->input->post('p_m'),
-			 	'p_l' => $this->input->post('p_l'),
-			 	'p_xl' => $this->input->post('p_xl'),
-			 	'p_xxl' => $this->input->post('p_xxl'),
+			 	'p_size' => json_encode($this->input->post('p_size')),
 			 	'p_price' => $this->input->post('p_price'),
 			 	'p_offerprice' => $this->input->post('p_offerprice'),
 			 	'p_brand' => $this->input->post('p_brand'),
@@ -175,6 +182,22 @@ class Category extends CI_Controller {
 			 );
 			 //echo "<pre>"; print_r($data);exit;
 			$this->Category_model->update_product_item($data);
+
+			$psize = $_POST['p_size'];
+			if($psize){
+				$pid = $this->input->post('p_id');
+				$this->Category_model->deletesize($pid);
+				foreach ($psize as $ps) {
+					$data2 = array(
+						'p_id' =>$pid,
+					 	'size_id' => $ps,
+					);
+					//echo "<pre>"; print_r($data2);
+					$this->Category_model->save_size($data2);
+				}
+
+			}
+			//ex
 
 		if (isset($_FILES['file']['name'])){
 			$total = count($_FILES['file']['name']);
