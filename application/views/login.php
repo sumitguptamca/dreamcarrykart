@@ -27,7 +27,7 @@ $basepath = base_url('assets/');
 				<div class="col-sm-5">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<?php if ($_SESSION['TYPE'] === 'success'){ ?>
+						<?php if ($_SESSION['TYPE'] != 'success'){ ?>
 							<h5 style="color: green"><?php echo  $_SESSION['MESSAGE'];?></h5>
 						 <?php  } ?>
 						<form action="<?php  echo base_url(); ?>home/signup" method="post">

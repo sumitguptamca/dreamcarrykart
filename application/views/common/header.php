@@ -26,6 +26,8 @@ $basepath = base_url('assets/');
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?=$basepath?>images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?=$basepath?>images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?=$basepath?>images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 </head><!--/head-->
 
 <body>
@@ -68,23 +70,46 @@ $basepath = base_url('assets/');
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-									
-								<?php if ($_SESSION['userid']) { ?>
+							  <li><a href="<?php echo base_url();?>cart" style="font-weight: bold;font-size:15px;"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+							  <?php $wal=$this->Users_model->getAllwalletbyID($_SESSION['userid']);?>
+							  <li><a href="#ex1" rel="modal:open" class="btn btn-default update"><i class="fa fa-money"></i> Add Wallet ( <i class="fa fa-inr"></i> <?php if(wal['amount']){echo $wal['amount'];}else{echo '0';} ?>)</a></li>
+
+
+							<!-- 	<?php if ($_SESSION['userid']) { ?>
+
 										<li><a href="" style="font-weight: bold;color: #FE980F;font-size:16px"><?php echo $_SESSION['user_name'];?></a></li>
 										<li><a href=""><i class="fa fa-user"></i> My Account</a></li>
-										<li><a href=""><i class="fa fa-crosshairs"></i> My Order</a></li>
+										<li><a href="<?php echo base_url()?>order"><i class="fa fa-crosshairs"></i> My Order</a></li>
 										<li><a href=""><i class="fa fa-money"></i> Add Wallet</a></li>
-										<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+										<li><a href="<?php echo base_url();?>cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 										<li><a href="<?php echo base_url();?>home/logout"><i class="fa fa-lock"></i> Logout</a></li>
 									
 								<?php } else {?>
 									<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 									<li><a href="<?php echo base_url();?>login"><i class="fa fa-lock"></i> Login & Signup</a></li>
-								<?php } ?>
+								<?php } ?> -->
 								
 							</ul>
 						</div>
 					</div>
+					<div id="ex1" class="modal">
+  					<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="bill-to">
+							<p>ADD AMOUNT</p>
+							<div class="form-one" style="width: 100%">
+					<form name="addAmount" method="POST" action="<?php echo base_url(); ?>home/addwallet">
+									<input type="text" name="cname" placeholder="Enter Amount">
+									<input type="submit" style="background-color: green"  name="submit" value="ADD AMOUNT">
+								</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+</div>
 				</div>
 			</div>
 		</div><!--/header-middle-->
@@ -103,30 +128,32 @@ $basepath = base_url('assets/');
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="<?php echo base_url();?>home" class="active">Home</a></li>
-								<li><a href="404.html">Product</a></li>
-								<!-- <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li>  -->
-								<li><a href="contact-us.html">Contact</a></li>
+								<?php if ($_SESSION['userid']) { ?>
+									<li><a href="" class="active"><?php echo $_SESSION['user_name'];?></a></li>
+									<li class="dropdown"><a href="#">My Account<i class="fa fa-angle-down"></i></a>
+		                                <ul role="menu" class="sub-menu">
+		                                   <li><a href=""><i class="fa fa-user"></i>&nbsp&nbsp My Account</a></li>
+											<li><a href="<?php echo base_url()?>order"><i class="fa fa-crosshairs"></i>&nbsp&nbsp My Order</a></li>
+											<li><a href=""><i class="fa fa-money"></i>&nbsp&nbsp Add Wallet</a></li>
+											<li><a href="<?php echo base_url();?>home/logout"><i class="fa fa-power-off"></i>&nbsp&nbsp Logout</a></li>
+
+		                                </ul>
+		                            </li>
+                           		<?php } else{?>
+                                <li><a href="<?php echo base_url();?>login" class="active">Login & Signup</a></li>
+                           		<?php } ?>
+								<li><a href="contact-us.html">Contact Us</a></li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-3">
+					<!-- <div class="col-sm-3">
 						<div class="search_box pull-right">
 							<input type="text" placeholder="Search"/>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
-	
 	
 	
