@@ -82,7 +82,7 @@ $config['mojo_db']  = true ;
 |
 */
 
-$config['mojo_table']  = 'table_name' ;
+$config['mojo_table']  = 'payment_name' ;
 
 
 /* End of file instamojo.php */
