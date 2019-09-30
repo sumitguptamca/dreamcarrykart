@@ -43,16 +43,21 @@ if (isset($_SESSION['selleremail'])) {
                     <a href="<?php echo base_url();?>seller">
                         <!-- <img class="align-content" src="images/logo.png" alt=""> -->
                         <strong class="align-content"><h2>SELLER LOGIN</h2></strong>
-                        <?php if($_SESSION['TYPE']=='error') {?>
-                            <h6><?php echo $_SESSION['MESSAGE'];?></h6>
-                        <?php } ?>
+
                     </a>
                 </div>
                 <div class="login-form">
+<<<<<<< HEAD
 
                     <h5 style="color: green"><?php echo  $_SESSION['MESSAGE'];?></h5>
 
 
+=======
+                     <?php if($_SESSION['TYPE']=='error') {?>
+                        <h6 style="text-align: center;color: red"><?php echo $_SESSION['MESSAGE'];?></h6>
+                     <?php } ?>
+                    <!-- <h5 style="color: green"><?php echo  $_SESSION['MESSAGE'];?></h5> -->
+>>>>>>> origin/master
                  <form action="<?php  echo base_url(); ?>sellers/seller_login/login" method="post">
                         <div class="form-group">
                             <label>Email address</label>

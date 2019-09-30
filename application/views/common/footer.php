@@ -89,5 +89,6 @@ $basepath = base_url('assets/');
 	<script src="<?=$basepath?>js/price-range.js"></script>
     <script src="<?=$basepath?>js/jquery.prettyPhoto.js"></script>
     <script src="<?=$basepath?>js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>
 </html>

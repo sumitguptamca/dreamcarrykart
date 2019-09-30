@@ -51,6 +51,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['login'] = 'home/login';
+$route['product-details'] = 'home/fetch_product_details';
+$route['cart'] = 'home/fetch_cart';
+$route['booking'] = 'home/booking';
+$route['paymentconfirm'] = 'home/paymentconfirm';
+$route['order'] = 'home/my_order';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////// Admin //////
 $route['admin/dashboard'] = 'admins/admin_dashboard';
@@ -89,6 +107,22 @@ $route['admin/setting/term'] = 'admins/adminsetting/term';
 $route['admin/setting/privacy'] = 'admins/adminsetting/privacy';
 $route['admin/setting/refund'] = 'admins/adminsetting/refund';
 $route['admin/setting/career'] = 'admins/adminsetting/career';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //////// Seller //////
