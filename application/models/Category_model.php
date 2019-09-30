@@ -36,6 +36,11 @@ class Category_model extends CI_Model{
       }
 
     }
+    public function add_category($data){
+       $this->db->insert('category',$data);
+            return true;
+
+    }
     public function update_category($data){
 
       $this->db->where('id', $data['id']);
@@ -76,6 +81,7 @@ class Category_model extends CI_Model{
 
 
     }
+
     public function update_product_item($data){
        $this->db->where('p_id', $data['p_id']);
              $this->db->set($data);
@@ -89,6 +95,12 @@ class Category_model extends CI_Model{
     public function deletesize($id){
       $this -> db -> where('p_id', $id);
        $this -> db -> delete('product_size');
+    }
+    public function delteitemSeller($id){
+
+      $this -> db -> where('id', $id);
+       $this -> db -> delete('product');
+
     }
 }
 

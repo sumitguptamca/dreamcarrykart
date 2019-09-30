@@ -49,11 +49,10 @@ if (isset($_SESSION['selleremail'])) {
                     </a>
                 </div>
                 <div class="login-form">
-<<<<<<< HEAD
-                    <h5 style="color: green"><?php echo  $_SESSION['MESSAGE'];?></h5>
-=======
 
->>>>>>> origin/master
+                    <h5 style="color: green"><?php echo  $_SESSION['MESSAGE'];?></h5>
+
+
                  <form action="<?php  echo base_url(); ?>sellers/seller_login/login" method="post">
                         <div class="form-group">
                             <label>Email address</label>

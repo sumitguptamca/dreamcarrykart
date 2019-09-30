@@ -10,6 +10,7 @@
                                 <strong class="card-title">Product List > <a href="<?php echo base_url(); ?>seller/product">Back to Product Category</a></strong>
                             </div>
                             <div class="card-body">
+                                <?php //echo "<pre>"; print_r($product); ?>
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
@@ -38,14 +39,15 @@
                                             <td><?= $row['p_offerprice'] ?> </td>
                                             <td>
                                                 <label class="switch switch-3d switch-primary mr-3">
-                                       			<input type="checkbox" class="switch-input" onchange="window.location = '<?php echo base_url() ?>admins/category/changeitemstatus?id=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['id']; ?>&status=<?php echo $row['status'] == 1 ? '0' : '1'?>'" <?php if($row['status'] != 0){echo'checked="true"';} ?>>
+                                       			<input type="checkbox" class="switch-input" onchange="window.location = '<?php echo base_url() ?>seller/changeitemstatus?id=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['id']; ?>&sid=<?php echo $_GET['sid'] ?>&status=<?php echo $row['status'] == 1 ? '0' : '1'?>'" <?php if($row['status'] != 0){echo'checked="true"';} ?>>
                                                     <span class="switch-label"></span>
                                                     <span class="switch-handle"></span>
                                                 </label>
                                              </td>
                                             <td>
-                                                 <a href="<?php echo base_url(); ?>admin/banner/editbanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a>
-                                                 <a href="<?php echo base_url(); ?>admins/banner/deletebanner?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                                                <a href="<?php echo base_url(); ?>seller/edititem?itemid=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['id'] ?>&sid=<?php echo $_GET['sid'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a> &nbsp;
+                                                 <!-- <a href="#"><button type="button" class="btn btn-danger">Delete</button></a> &nbsp; -->
+                                                 <a href="<?php echo base_url(); ?>seller/deletestitem?itemid=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['id'] ?>&sid=<?php echo $_GET['sid'] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
                                             </td>
                                         </tr>
                                     <?php $i++; } ?>

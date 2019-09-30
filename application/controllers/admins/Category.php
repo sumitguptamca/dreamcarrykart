@@ -10,6 +10,9 @@ class Category extends CI_Controller {
 		//echo "<pre>";print_r($data['category']);die;
 		$this->load->view('admin/category',$data);
 	}
+	public function addcategory(){
+		$this->load->view('admin/add_category');
+	}
 	public function changestatus(){
 
 		
@@ -26,6 +29,20 @@ class Category extends CI_Controller {
 		
 		//echo "<pre>";print_r($data['category']);die;
 		$this->load->view('admin/edit_category',$data);
+
+	}
+	public function addsavecategory(){
+		if(isset($_POST['submit'])){
+			 $data=array(
+			 	'cat_name' => $this->input->post('cat_name'),
+			 	'status'=>1,
+
+			 );
+			 //echo "<pre>"; print_r($data);exit;
+			 $this->Category_model->add_category($data);
+			 redirect('admin/category','refresh');
+				 exit();
+		}
 
 	}
 	public function updatecategory(){

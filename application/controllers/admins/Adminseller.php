@@ -5,6 +5,7 @@ class Adminseller extends CI_Controller {
 	public function index()
 	{
 		$data['user']=$this->Adminseller_model->getAllseller();
+		//echo "<pre>"; print_r($data['user']); exit();
 		$this->load->view('admin/seller',$data);
 	}
 	public function changeadminsellerstatus(){

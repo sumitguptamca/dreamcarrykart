@@ -26,6 +26,7 @@ $fname=explode(' ', $_SESSION['sellername']);
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/selectFX/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>vendors/chosen/chosen.min.css">
     <!-- <link rel="stylesheet" href="<?php echo base_url();?>vendors/jqvmap/dist/jqvmap.min.css"> -->
     <link rel="stylesheet" href="<?=$basepath?>css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>

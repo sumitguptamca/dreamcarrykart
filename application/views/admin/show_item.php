@@ -19,6 +19,7 @@
                                             <th>Availability <br> Condition <br> Brand</th>
                                             <th>Price</th>
                                             <th>Offer Price</th>
+                                            <th>Date</th>
                                             <th>Status</th>
                                              <th>Action</th>
                                         </tr>
@@ -38,7 +39,9 @@
                                                 <?php ?>
                                              </td>
                                                 <td><?= $row['p_offerprice'] ?> </td>
+                                                <td><?php echo $row['create_date']; ?></td>
                                             <td>
+
 
                                                 <label class="switch switch-3d switch-primary mr-3">
                                         <input type="checkbox" class="switch-input" onchange="window.location = '<?php echo base_url() ?>admins/category/changeitemstatus?id=<?php echo $row['id'] ?>&cat_id=<?php echo $_GET['cid']; ?>&status=<?php echo $row['status'] == 1 ? '0' : '1'?>'" <?php if($row['status'] != 0){echo'checked="true"';} ?>>

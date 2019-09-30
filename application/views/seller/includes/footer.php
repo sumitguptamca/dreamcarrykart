@@ -22,6 +22,8 @@ $basepath = base_url('assets_admin/');
     <script src="<?php echo base_url();?>vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo base_url();?>vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="<?=$basepath?>js/init-scripts/data-table/datatables-init.js"></script>
+    <script src="<?php echo base_url();?>vendors/chosen/chosen.jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.js"></script>
 
     <script>
         (function($) {
@@ -46,6 +48,13 @@ $basepath = base_url('assets_admin/');
                 'sScrollX': true
             } );
         } );
+         jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 10,
+            no_results_text: "Oops, nothing found!",
+            width: "100%"
+        });
+    });
     </script>
     </div><!-- /#right-panel -->
 </body>

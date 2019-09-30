@@ -66,6 +66,7 @@ $route['admin/ads_banner'] = 'admins/ads_banner/index';
 $route['admin/ads_banner/add'] = 'admins/ads_banner/add';
 $route['admin/ads_banner/editadsbanner'] = 'admins/ads_banner/editadsbanner';
 $route['admin/category'] = 'admins/category/index';
+$route['admin/category/add'] = 'admins/category/addcategory';
 $route['admin/category/editcategory'] = 'admins/category/editcategory';
 $route['admin/category/updatecategory'] = 'admins/category/updatecategory';
 $route['admin/category/additem'] = 'admins/category/additem';
@@ -78,12 +79,25 @@ $route['admin/order/c_order'] = 'admins/order/c_order';
 $route['admin/order/p_order'] = 'admins/order/p_order';
 $route['admin/order/cancel_order'] = 'admins/order/cancel_order';
 $route['admin/user'] = 'admins/user/index';
-$route['admin/seller'] = 'admins/seller/index';
+$route['admin/adminseller'] = 'admins/adminseller/index';
+$route['admin/adminseller/editadminseller'] = 'admins/adminseller/editadminseller';
+$route['admin/adminseller/updateadminseller'] = 'admins/adminseller/updateadminseller';
+
+//Setting//////////////////
+$route['admin/setting'] = 'admins/adminsetting/index';
+$route['admin/setting/term'] = 'admins/adminsetting/term';
+$route['admin/setting/privacy'] = 'admins/adminsetting/privacy';
+$route['admin/setting/refund'] = 'admins/adminsetting/refund';
+$route['admin/setting/career'] = 'admins/adminsetting/career';
+
 
 //////// Seller //////
 $route['seller'] = 'sellers/seller_login';
 $route['seller/signup'] = 'sellers/seller_login/signup';
 $route['seller/dashboard'] = 'sellers/seller_dashboard';
+$route['seller/changeitemstatus'] = 'sellers/seller_dashboard/changeitemstatus';
+$route['seller/edititem'] = 'sellers/seller_dashboard/edititem';
+$route['seller/deletestitem'] = 'sellers/seller_dashboard/deletestitem';
 $route['seller/product'] = 'sellers/seller_dashboard/showProductCategory';
 $route['seller/addproduct'] = 'sellers/seller_dashboard/addProductItem';
 $route['seller/showproduct'] = 'sellers/seller_dashboard/showProductItem';

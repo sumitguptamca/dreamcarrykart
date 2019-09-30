@@ -71,6 +71,7 @@ $basepath = base_url('assets_admin/');
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-plus"></i>Product Catagory </a>
                         <ul class="sub-menu children dropdown-menu">
+                             <li><a href="<?php echo base_url();?>admin/category/add">Ads Category</a></li>
                             <li><a href="<?php echo base_url();?>admin/category">Catagory List</a></li>
                           
                         </ul>
@@ -115,12 +116,18 @@ $basepath = base_url('assets_admin/');
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cog"></i>Setting </a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#">Language</a></li>
+                            <li><a href="<?php echo base_url();?>admin/setting">Company Information</a></li>
                             <li>
-                                <a href="#">Tell Us What You Love</a>
+                                <a href="<?php echo base_url();?>admin/setting/term">Terms of Use</a>
                             </li>
                             <li>
-                                <a href="#">Agency Name</a>
+                                <a href="<?php echo base_url();?>admin/setting/privacy">Privecy Policy</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url();?>admin/setting/refund">Refund Policy</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url();?>admin/setting/career">Careers</a>
                             </li>
 
                         </ul>
