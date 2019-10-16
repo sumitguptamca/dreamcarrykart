@@ -57,9 +57,10 @@ $config['mojo_token']  = 'test_38d4c10f133a5292990ded560d4' ;
 |--------------------------------------------------------------------------
 | Set redirect url !
 | $config['mojo_url'] = 'https://github.com/Instamojo/instamojo-php';
-|
+|http://localhost/paymentconfirm
 */
 
+//$config['mojo_url'] = $_SERVER['SERVER_NAME'].'/paymentconfirm';
 $config['mojo_url'] = 'http://localhost/paymentconfirm';
 
 

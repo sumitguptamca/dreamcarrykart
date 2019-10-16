@@ -32,7 +32,7 @@ $basepath = base_url('assets/');
 						<div class="col-sm-4">
 							<div class="view-product">
 								<img src="<?php  echo base_url().'/'.$item['image_path'] ?>" alt="" />
-								<h3>ZOOM</h3>
+								<!-- <h3>ZOOM</h3> -->
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -48,7 +48,7 @@ $basepath = base_url('assets/');
 														 foreach($images AS $row){
 								    		  			$image = base_url($row['image_path']);
 													?>
-												  	<a href=""><img src="<?=$image?>" alt=""></a>
+												  	<a href="<?=$image?>"><img src="<?=$image?>" alt=""></a>
 													<?php } ?>
 											    </div>
 									<?php } else{ ?>
@@ -57,7 +57,7 @@ $basepath = base_url('assets/');
 														 foreach($images AS $row){
 								    		  			$image = base_url($row['image_path']);
 													?>
-													 	 <a href=""><img src="<?=$image?>" alt=""></a>
+													 	 <a href="<?=$image?>"><img src="<?=$image?>"  alt=""></a>
 												  <?php } ?>
 												</div>
 										<?php } ?>
@@ -77,7 +77,7 @@ $basepath = base_url('assets/');
 							<form action="<?php  echo base_url(); ?>home/save_cart" method="post">
 							<input type="hidden" name="p_name" value="<?php echo $item['p_name']?>">
 							<input type="hidden" name="p_id" value="<?php echo $item['p_id']?>">
-							<input type="hidden" name="p_price" value="<?php echo $item['p_price']?>">
+							<input type="hidden" name="p_price" value="<?php echo $item['p_offerprice']?>">
 							<div class="product-information"><!--/product-information-->
 								<img src="<?=$basepath?>images/product-details/new.jpg" class="newarrival" alt="" />
 								<h2><?php echo $item['p_brand']?></h2>

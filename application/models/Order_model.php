@@ -1,14 +1,8 @@
 <?php
 class Order_model extends CI_Model{
-	public function adminlogin($data){
-		$this->db->select('*');
-        $this->db->from('admin_login');
-        $this->db->where('email',$data['email']);
-        $this->db->where('password',$data['password']);
-        $result = $this->db->get();
-        // echo $this->db->last_query();die;
-        if($result->num_rows()){
-            return $result->row_array();
-        }
+	public function getAllOrder(){
+		$query = $this->db->query("SELECT bok.*,os.name as statusname ,ur.name,ur.email,ur.mobile  FROM `booking` as bok LEFT JOIN order_status as os ON os.id = bok.status LEFT JOIN users as ur ON ur.user_id=bok.user_id");
+        $count=$query->num_rows();
+       return $query->result_array();
 	}
 }?>

@@ -27,7 +27,15 @@ $basepath = base_url('assets/');
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?=$basepath?>images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?=$basepath?>images/ico/apple-touch-icon-57-precomposed.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="<?=$basepath?>/dist/jquery.litebox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?=$basepath?>/dist/jquery.litebox.gallery.css" type="text/css" media="screen" />
+<style type="text/css">
+	.litebox overlay img{
+		width: 500px
 
+	}
+
+</style>
 </head><!--/head-->
 
 <body>
@@ -63,31 +71,22 @@ $basepath = base_url('assets/');
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="<?php echo base_url();?>home"><img src="<?=$basepath?>images/home/logo.png" alt="" /></a>
+							<a href="<?php echo base_url();?>home"><img src="<?=$basepath?>images/home/logo-new.png" alt="" /></a>
 						</div>
 						
 					</div>
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-							  <li><a href="<?php echo base_url();?>cart" style="font-weight: bold;font-size:15px;"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								  <?php if($_SESSION['userid']){ ?>
+								  	 <?php $itemcount=$this->Users_model->getAllitemCount($_SESSION['userid']);?>
+							  <li><a href="<?php echo base_url();?>cart" style="font-weight: bold;font-size:15px;"><i class="fa fa-shopping-cart"></i> Cart (<?php print_r($itemcount['count']) ?>)</a></li>
 							  <?php $wal=$this->Users_model->getAllwalletbyID($_SESSION['userid']);?>
+
 							  <li><a href="#ex1" rel="modal:open" class="btn btn-default update"><i class="fa fa-money"></i> Add Wallet ( <i class="fa fa-inr"></i> <?php if(wal['amount']){echo $wal['amount'];}else{echo '0';} ?>)</a></li>
+							<?php } ?>
 
 
-							<!-- 	<?php if ($_SESSION['userid']) { ?>
-
-										<li><a href="" style="font-weight: bold;color: #FE980F;font-size:16px"><?php echo $_SESSION['user_name'];?></a></li>
-										<li><a href=""><i class="fa fa-user"></i> My Account</a></li>
-										<li><a href="<?php echo base_url()?>order"><i class="fa fa-crosshairs"></i> My Order</a></li>
-										<li><a href=""><i class="fa fa-money"></i> Add Wallet</a></li>
-										<li><a href="<?php echo base_url();?>cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-										<li><a href="<?php echo base_url();?>home/logout"><i class="fa fa-lock"></i> Logout</a></li>
-									
-								<?php } else {?>
-									<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-									<li><a href="<?php echo base_url();?>login"><i class="fa fa-lock"></i> Login & Signup</a></li>
-								<?php } ?> -->
 								
 							</ul>
 						</div>
@@ -134,7 +133,7 @@ $basepath = base_url('assets/');
 		                                <ul role="menu" class="sub-menu">
 		                                   <li><a href=""><i class="fa fa-user"></i>&nbsp&nbsp My Account</a></li>
 											<li><a href="<?php echo base_url()?>order"><i class="fa fa-crosshairs"></i>&nbsp&nbsp My Order</a></li>
-											<li><a href=""><i class="fa fa-money"></i>&nbsp&nbsp Add Wallet</a></li>
+											<!-- <li><a href=""><i class="fa fa-money"></i>&nbsp&nbsp Add Wallet</a></li> -->
 											<li><a href="<?php echo base_url();?>home/logout"><i class="fa fa-power-off"></i>&nbsp&nbsp Logout</a></li>
 
 		                                </ul>

@@ -5,6 +5,7 @@ class Adminuser extends CI_Controller {
 	public function index()
 	{
 		$data['user']=$this->Adminuser_model->getAlluser();
+		//echo "<pre>"; print_r($data);
 		$this->load->view('admin/user',$data);
 	}
 	public function changeadminuserstatus(){

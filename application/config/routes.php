@@ -96,7 +96,7 @@ $route['admin/order'] = 'admins/order/index';
 $route['admin/order/c_order'] = 'admins/order/c_order';
 $route['admin/order/p_order'] = 'admins/order/p_order';
 $route['admin/order/cancel_order'] = 'admins/order/cancel_order';
-$route['admin/user'] = 'admins/user/index';
+$route['admin/adminuser'] = 'admins/adminuser/index';
 $route['admin/adminseller'] = 'admins/adminseller/index';
 $route['admin/adminseller/editadminseller'] = 'admins/adminseller/editadminseller';
 $route['admin/adminseller/updateadminseller'] = 'admins/adminseller/updateadminseller';
@@ -107,21 +107,6 @@ $route['admin/setting/term'] = 'admins/adminsetting/term';
 $route['admin/setting/privacy'] = 'admins/adminsetting/privacy';
 $route['admin/setting/refund'] = 'admins/adminsetting/refund';
 $route['admin/setting/career'] = 'admins/adminsetting/career';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

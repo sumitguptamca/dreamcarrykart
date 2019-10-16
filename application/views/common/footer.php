@@ -57,12 +57,12 @@ $basepath = base_url('assets/');
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<!-- <h2>About Shopper</h2>
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Your email address" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
 								<p>Get the most recent updates from <br />our site and be updated your self...</p>
-							</form>
+							</form> -->
 						</div>
 					</div>
 					
@@ -73,8 +73,8 @@ $basepath = base_url('assets/');
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+					<p class="pull-left">Copyright © 2019 DreamCarryKart All rights reserved.</p>
+					<p class="pull-right">Designed and Develop by <span><a target="_blank" href="#">Sumit Gupta</a></span></p>
 				</div>
 			</div>
 		</div>
@@ -82,7 +82,7 @@ $basepath = base_url('assets/');
 	</footer><!--/Footer-->
 	
 
-  
+
     <script src="<?=$basepath?>js/jquery.js"></script>
 	<script src="<?=$basepath?>js/bootstrap.min.js"></script>
 	<script src="<?=$basepath?>js/jquery.scrollUp.min.js"></script>
@@ -90,5 +90,11 @@ $basepath = base_url('assets/');
     <script src="<?=$basepath?>js/jquery.prettyPhoto.js"></script>
     <script src="<?=$basepath?>js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="<?=$basepath?>dist/jquery.litebox.js"></script>
+    <script>
+			jQuery(function($) {
+				$('div.item a').litebox();
+			});
+		</script>
 </body>
 </html>

@@ -205,6 +205,16 @@ class Users_model extends CI_Model{
     return $query->row_array();
 
  }
+
+ public function getAllitemCount($id){
+
+  $query = $this->db->query("SELECT count(p_id) as count from `cart` where user_id='".$id."'");
+   $count=$query->num_rows();
+   // echo $this->db->last_query();die;
+    return $query->row_array();
+
+ }
+
  public function getOrderStatus($status){
   $query = $this->db->query("SELECT * FROM `order_status` WHERE id='".$status."' ");
    $count=$query->num_rows();

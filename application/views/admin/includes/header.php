@@ -82,7 +82,7 @@ $basepath = base_url('assets_admin/');
                          <ul class="sub-menu children dropdown-menu">
                             <li><a href="<?php echo base_url();?>admin/order">All Order</a></li>
                             <li><a href="<?php echo base_url();?>admin/order/c_order">Confirm Order</a></li>
-                            <li><a href="<?php echo base_url();?>admin/order/p_order">Pending Order</a></li>
+                            <li><a href="<?php echo base_url();?>admin/order/p_order">Shipped Order</a></li>
                             <li><a href="<?php echo base_url();?>admin/order/cancel_order">Cancel Order</a></li>
                         </ul>
                     </li>

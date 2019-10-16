@@ -16,7 +16,7 @@
             <strong>Edit User</strong>
         </div>
         <div class="card-body card-block">
-            <form action="<?php echo base_url(); ?>admin/adminuser/updateadminuser" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form action="<?php echo base_url(); ?>admins/adminuser/updateadminuser" method="post" enctype="multipart/form-data" class="form-horizontal">
 
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name</label></div>

@@ -1,6 +1,7 @@
 <?php 
 include('common/header.php');
 $basepath = base_url('assets/');
+// echo "<pre>"; print_r($_SERVER['SERVER_NAME']);
 ?>
 <section id="slider"><!--slider-->
 		<div class="container">
@@ -41,30 +42,30 @@ $basepath = base_url('assets/');
 									<div class="panel-heading">
 										<h4 class="panel-title"><a href="<?php echo base_url()?>home">ALL</a></h4>
 									</div>
-									<?php foreach($category as $row){?>
+									<?php foreach($category as $row){ if($row['status'] == 1){?>
 									<div class="panel-heading">
 										<!-- data-toggle="tab" -->
 
 										<h4 class="panel-title"><a href="<?php echo base_url()?>home?id=<?php echo $row['id']; ?>"><?php echo $row['cat_name'];?></a></h4>
 
 									</div>
-									<?php } ?>
+									<?php } } ?>
 								</div>
 
 						</div><!--/category-products-->
 
-						<?php foreach($adsbanner as $row){?>
+						<?php  foreach($adsbanner as $row){ if( $row['status'] ==1){?>
 							<div class="shipping text-center"><!--shipping-->
 								<img src="<?php  echo base_url().'/'.$row['image_path'] ?>" alt="" />
 							</div>
-						<?php } ?>
+						<?php } }?>
 					</div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">All Items</h2>
-						<?php foreach ($product as $item) {?>
+						<?php if($product){foreach ($product as $item) {  if($item['status'] == 1){?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -93,13 +94,15 @@ $basepath = base_url('assets/');
 								</div>
 							</div>
 						</div>
+						<?php }}}else{ ?>
+							<h5>No Record Found</h5>
 						<?php } ?>
-						<ul class="pagination">
+						<!-- <ul class="pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">3</a></li>
 							<li><a href="">&raquo;</a></li>
-						</ul>
+						</ul> -->
 					</div><!--features_items-->
 
 				</div>

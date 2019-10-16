@@ -28,7 +28,8 @@ $basepath = base_url('assets/');
 					<tbody>
 						<?php
 							if($cartdetails){
-								foreach($cartdetails as $cart){?>
+								foreach($cartdetails as $cart){
+								//	echo "<pre>";print_r($cart);?>
 								<tr>
 								<td class="cart_product">
 									<a href=""><img src="<?= base_url().'/'.$cart['image_path']?>" alt="" style="width: 100px;height: 100px;"></a>

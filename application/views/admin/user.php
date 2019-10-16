@@ -38,7 +38,7 @@
                                                 </label>
                                              </td>
                                             <td>
-                                                <a href="<?php echo base_url(); ?>admin/adminuser/editadminuser?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a>
+                                                <a href="<?php echo base_url(); ?>admins/adminuser/editadminuser?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-primary">Edit</button> </a>
                                             </td>
                                         </tr>
                                         <?php $i++; } ?>
